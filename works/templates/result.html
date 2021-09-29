@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" id="result">
+    <div class="row align-item-start">
+        <div class="col">
+            <img src="data:image/png;base64, {{ graph | safe }}">
+        </div>
+        <div class="col">
+            <h4>あなたの性格は</h4>
+            <h4>「<strong>{{ personality }}タイプ</strong>」です。</h4>
+            <p>
+                {{ explanation }}
+            </p>
+            <p>
+                {{ advice }}
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container foot_content">
+    <h5 class="result_heading">
+        お疲れ様でした！
+    </h5>
+    <p>以上が性格診断の結果です。ページを移動するとこの結果は消えてしまい、
+        再度診断し直すことになってしまいます。結果を後で見直したい方はスクリーンショットなどで保存してください。</p>
+</div>
+
+<div class="container foot_content">
+    <h5 class="result_heading">
+        より詳細な自己分析を行いたい方へ
+    </h5>
+    <p>この性格診断はあくまで簡易的なものです。より制度の高い自己分析をお求めの方にはいかに挙げるような性格診断テストをおすすめしますので、興味があればぜひ調べてみてください！</p>
+    <ul>
+        <li class="recom_list">ストレングスファインダー</li>
+        ストレングスファインダーとは、米国ギャラップ社の開発したオンライン「才能診断」ツールです。Webサイト上で１７７個の質問に答えることで、自分の才能（＝強みの元）を導き出すことができます。
+        <li class="recom_list">BIG5理論</li>
+        BIG5理論とは、人の性格を開放性、誠実性、外交性、協調性、神経症的傾向の5つの指標により数値化する性格特性の分類法です。
+    </ul>
+</div>
+{% endblock content %}

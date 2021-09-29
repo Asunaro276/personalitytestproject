@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+{% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- Original CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>簡単性格診断</title>
+
+    <!-- header font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/icons.png' %}">
+
+</head>
+<body>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+{% block header %}
+
+<div class="border-top" id="head_content">
+    <div class="container">
+        <h1 class="title">Personality Test</h1>
+        <p id="sub_sentence">この性格診断では18個の簡単な質問に答えることであなたの性格を統計的に分析します。</p>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+{% endblock content %}
+
+{% block footer %}
+<div class="container">
+    <div class="small text-center text-muted header">COPYRIGHT © 2021 - RYUHEI_NAKANO</div>
+</div>
+{% endblock footer %}
+
+</body>
+</html>

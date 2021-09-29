@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" id="feature_title">
+    <h3>
+        この性格診断の特徴
+    </h3>
+</div>
+
+<div class="container features">
+    <h4 class="explanation"><span class="list_dot">●</span>あなたの性格を2つの軸でシンプルに表現します</h4>
+    <p class="sub_explanation">
+        この性格診断ではあなたの回答をもとにあなたの性格を、
+    <ul><li>フットワークの軽さ（逆に言うとどれくらい慎重か）</li><li>論理をどれくらい重要視するか（逆に言うとどれくらい情動を重視するか）</li></ul>
+    という<span class="mark">2つの軸によって評価します。</span>
+    </p>
+</div>
+
+<div class="container features">
+    <h4 class="explanation"><span class="list_dot">●</span>あなたの性格を統計的に分析します</h4>
+    <p class="sub_explanation">
+        この性格診断は経験則ではなく、<span class="mark">適切な統計的手法をもとにあなたの性格を分析します。</span>なお、この性格診断の分析には下記のオープンデータソースを用いています。
+    </p>
+    <div class="sub_explanation container">
+        <div class="row data">
+            <div class="col-sm-2 link_title">
+                データ置き場：
+            </div>
+            <a class="col" href="http://openpsychometrics.org/_rawdata">Open-Source Psychometrics Project</a>
+        </div>
+        <div class="row data">
+            <div class="col-sm-2 link_title">
+                生データファイル：
+            </div>
+            <a class="col" href="http://openpsychometrics.org/_rawdata/OHBDS-data.zip">OHBDS-data.zip</a>
+        </div>
+    </div>
+</div>
+
+<form method="POST" action="">{% csrf_token %}
+    <div class="container">
+        <table class="tbl-r02">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col" colspan="2">Question</th>
+                <th scope="col">当てはまる</th>
+                <th scope="col">どちらでもない</th>
+                <th scope="col">当てはまらない</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+                <td>1</td>
+                <td colspan="2">人から褒められるのが苦手</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer1 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td colspan="2">図工より数学が好き</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer2 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>3</td>
+                <td colspan="2">遅刻はめったにしない</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer3 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td colspan="2">説明書を読むのがめんどう</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer4 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr class="odd">
+                <td>5</td>
+                <td colspan="2">部屋が散らかっていると落ち着かない</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer5 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td colspan="2">自分は直感的な人間だと思う</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer6 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr class="odd">
+                <td>7</td>
+                <td colspan="2">誰にでもビジネスライクに振る舞う</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer7 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td colspan="2">新しいアイデアをよく思いつく</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer8 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr class="odd">
+                <td>9</td>
+                <td colspan="2">何が起きてもあまり動じない</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer9 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td colspan="2">映画を見てもめったに泣かない</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer10 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr class="odd">
+                <td>11</td>
+                <td colspan="2">自分の人生計画についてしっかりと考えている</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer11 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td colspan="2">感情より事実を優先する</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer12 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr class="odd">
+                <td>13</td>
+                <td colspan="2">やらかし癖がある</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer13 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td colspan="2">イライラすることが多い</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer14 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr class="odd">
+                <td>15</td>
+                <td colspan="2">自分はロマンチストだと思う</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer15 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td colspan="2">ロジックが何よりも大切だと思う</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer16 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr class="odd">
+                <td>17</td>
+                <td colspan="2">使ったものをもとの場所に戻すのを忘れることがある</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer17 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td colspan="2">緊迫した状況でも落ち着ける
+</td>
+                <td colspan="3">
+                    <div class="d-flex flex-row bd-highlight">
+                        　　　 {% for choice in form.answer18 %}
+                        <div class="form-check-inline">
+                            　　　 {{ choice.tag }}
+                        </div>
+                        　　　 {% endfor %}
+                    </div>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-grid gap-2 col-2 mx-auto result_button">
+        <button class="btn btn-primary" type="submit">診断する</button>
+    </div>
+</form>
+
+
+{% endblock content %}

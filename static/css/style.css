@@ -1,0 +1,169 @@
+#head_content {
+    text-align: center;
+    background-color: #0b3b3f;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    margin-bottom: 5%;
+    color: white;
+}
+
+.title {
+    font-family: 'Noto Serif', serif;
+    font-size: 40pt;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+#sub_sentence {
+    font-size: 16pt;
+    margin-top: 15px;
+}
+
+#feature_title {
+    padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+    color: #494949;/*文字色*/
+    background: #f4f4f4;/*背景色*/
+    border-left: solid 5px #457bcc;/*左線*/
+    border-bottom: solid 3px #d7d7d7;/*下線*/
+    font-family:"Meiryo UI",sans-serif;;
+}
+
+.list_dot {
+    color: #ffbe46;
+    padding: 5px;
+    font-size: 15pt;
+}
+
+.explanation {
+    font-weight: bold;
+}
+
+.sub_explanation {
+    margin-top: 12px;
+    padding: 5px;
+}
+
+.features {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding-left: 2%;
+}
+
+.mark {
+    background: linear-gradient(transparent 70%, #f6ff5f 70%);
+}
+
+.data {
+    padding: 1%;
+}
+
+input[type=radio] {
+    width: 20pt;
+    height: 20pt;
+}
+
+.form-check-inline {
+    font-size: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table {
+    width: 100%;
+    height: 1100px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border: thin solid lightgray;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+}
+
+tbody > td {
+    border: thin solid lightgray;
+}
+
+thead th {
+    text-align: center;
+    width: 8%;
+    background-color: #457bcc;
+    color: #ffffff;
+}
+
+tr {
+    border: thin solid lightgray;
+}
+
+tr th:first-child {
+    width: 1%;
+}
+
+.d-flex {
+    padding-left: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+tr td:first-child {
+    text-align: center;
+    width: 1%;
+    padding-right: 20px;
+}
+
+td[colspan='2'] {
+    width: 20%;
+}
+
+table th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.odd {
+    background-color: whitesmoke;
+}
+
+.result_button {
+    margin-bottom: 140px;
+}
+
+
+/* for result.html*/
+
+#result {
+    background-color: whitesmoke;
+    margin-bottom: 100px;
+}
+
+img {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    object-fit: cover;
+}
+
+h4 {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    #result {
+        flex-wrap: wrap;
+    }
+}
+
+.header {
+    border-top: solid gray;
+}
+
+.result_heading {
+    text-align: center;
+    color: #457bcc;
+}
+
+.foot_content {
+    max-width: 70%;
+    margin-bottom: 90px;
+}
+
+.recom_list {
+    padding-top: 5px;
+}
