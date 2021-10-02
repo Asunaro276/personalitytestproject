@@ -1,4 +1,5 @@
 from django import forms
+from .models import PersonalityModel
 
 CHOICE = [
     ('5', '非常に当てはまる'),
@@ -10,6 +11,18 @@ CHOICE = [
 
 
 class QuestionnaireForm(forms.Form):
+    class Meta:
+        model = PersonalityModel
+        fields = ("answer1", "answer2",
+                  "answer3", "answer4",
+                  "answer5", "answer6",
+                  "answer7", "answer8",
+                  "answer9", "answer10",
+                  "answer11", "answer12",
+                  "answer13", "answer14",
+                  "answer15", "answer16",
+                  "answer17", "answer18")
+
     answer1 = forms.ChoiceField(
         label='answer',
         widget=forms.RadioSelect,

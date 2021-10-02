@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from .forms import QuestionnaireForm
+from .models import PersonalityModel
 from .personality import make_result, normalize
 
 
@@ -21,6 +22,9 @@ class QuestionnaireView(FormView):
         return super().form_valid(form)
 
     def post(self, request, *args, **kwargs):
+        form = QuestionnaireForm(request.POST or None)
+        if form.is_valid():
+            PersonalityModel.objects.create(**form.cleaned_data)
         data = np.array([int(request.POST[f'answer{i+1}']) for i in range(18)]).reshape((1, -1))
         with open('works/factor_analyzer', 'rb') as fa_file:
             fa = pickle.load(fa_file)
