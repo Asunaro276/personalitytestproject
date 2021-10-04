@@ -1,8 +1,6 @@
 from django.urls import path
 
-from .views import QuestionnaireView, ResultView, my_customized_server_error
-
-handler500 = my_customized_server_error
+from .views import QuestionnaireView, ResultView
 
 urlpatterns = [
     path('', QuestionnaireView.as_view(), name='questionnaire'),

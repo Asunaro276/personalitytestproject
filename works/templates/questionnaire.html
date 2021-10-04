@@ -38,243 +38,386 @@
 </div>
 
 <form method="POST" action="">{% csrf_token %}
-    <div class="container">
+    <div class="container-md table">
         <table class="tbl-r02">
             <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col" colspan="2">Question</th>
-                <th scope="col">当てはまる</th>
-                <th scope="col">どちらでもない</th>
-                <th scope="col">当てはまらない</th>
+            <tr class="table_head">
+                <th>
+                    <div class="head_question">Question</div>
+                    <div class="head_choice">
+                        <span id="accurate">当てはまる</span>
+                        <span id="neutral">どちらでもない</span>
+                        <span id="inaccurate">当てはまらない</span>
+                    </div>
+                </th>
             </tr>
             </thead>
             <tbody>
-            <tr class="odd">
-                <td>1</td>
-                <td colspan="2">人から褒められるのが苦手</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="odd table_element">
+                <td>
+                    <div class="question_number">
+                        1
+                    </div>
+                    <div class="question">
+                        人から褒められるのが苦手
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer1 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
                 </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td colspan="2">図工より数学が好き</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        2
+                    </div>
+                    <div class="question">
+                        人から褒められるのが苦手
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer2 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
                 </td>
             </tr>
-            <tr class="odd">
-                <td>3</td>
-                <td colspan="2">遅刻はめったにしない</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        3
+                    </div>
+                    <div class="question">
+                        遅刻はめったにしない
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer3 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr>
-                <td>4</td>
-                <td colspan="2">説明書を読むのがめんどう</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        4
+                    </div>
+                    <div class="question">
+                        説明書を読むのが面倒
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer4 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr class="odd">
-                <td>5</td>
-                <td colspan="2">部屋が散らかっていると落ち着かない</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        5
+                    </div>
+                    <div class="question">
+                        部屋が散らかっていると落ち着かない
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer5 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr>
-                <td>6</td>
-                <td colspan="2">自分は直感的な人間だと思う</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        6
+                    </div>
+                    <div class="question">
+                        自分は直感的な人間だと思う
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer6 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr class="odd">
-                <td>7</td>
-                <td colspan="2">誰にでもビジネスライクに振る舞う</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        7
+                    </div>
+                    <div class="question">
+                        誰にでも礼儀正しく振る舞う
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer7 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr>
-                <td>8</td>
-                <td colspan="2">新しいアイデアをよく思いつく</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        8
+                    </div>
+                    <div class="question">
+                        新しいアイデアをよく思いつく
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer8 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr class="odd">
-                <td>9</td>
-                <td colspan="2">何が起きてもあまり動じない</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        9
+                    </div>
+                    <div class="question">
+                        何が起きてもあまり動じない
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer9 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr>
-                <td>10</td>
-                <td colspan="2">映画を見てもめったに泣かない</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        10
+                    </div>
+                    <div class="question">
+                        映画を見てもめったに泣かない
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer10 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr class="odd">
-                <td>11</td>
-                <td colspan="2">自分の人生計画についてしっかりと考えている</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        11
+                    </div>
+                    <div class="question">
+                        自分の人生計画についてしっかりと考えている
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer11 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr>
-                <td>12</td>
-                <td colspan="2">感情より事実を優先する</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        12
+                    </div>
+                    <div class="question">
+                        感情より事実を優先する
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer12 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr class="odd">
-                <td>13</td>
-                <td colspan="2">やらかし癖がある</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        13
+                    </div>
+                    <div class="question">
+                        やらかし癖がある
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer13 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr>
-                <td>14</td>
-                <td colspan="2">イライラすることが多い</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        14
+                    </div>
+                    <div class="question">
+                        イライラすることが多い
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer14 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr class="odd">
-                <td>15</td>
-                <td colspan="2">自分はロマンチストだと思う</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        15
+                    </div>
+                    <div class="question">
+                        自分はロマンチストだと思う
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer15 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr>
-                <td>16</td>
-                <td colspan="2">ロジックが何よりも大切だと思う</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        16
+                    </div>
+                    <div class="question">
+                        ロジックが何よりも大切だと思う
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer16 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr class="odd">
-                <td>17</td>
-                <td colspan="2">使ったものをもとの場所に戻すのを忘れることがある</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        17
+                    </div>
+                    <div class="question">
+                        使ったものを元の場所に戻すのを忘れることがある
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer17 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
-            <tr>
-                <td>18</td>
-                <td colspan="2">緊迫した状況でも落ち着ける
-</td>
-                <td colspan="3">
-                    <div class="d-flex flex-row bd-highlight">
+            <tr class="even table_element">
+                <td>
+                    <div class="question_number">
+                        18
+                    </div>
+                    <div class="question">
+                        緊迫した状況でも落ち着ける
+                    </div>
+                    <div class="d-flex flex-row bd-highlight choices">
                         　　　 {% for choice in form.answer18 %}
                         <div class="form-check-inline">
                             　　　 {{ choice.tag }}
                         </div>
                         　　　 {% endfor %}
                     </div>
+                    <div class="accurate_sm">当てはまる</div>
+                    <div class="neutral_sm">どちらでもない</div>
+                    <div class="inaccurate_sm">当てはまらない</div>
+                </td>
             </tr>
             </tbody>
         </table>
-    </div>
-
-    <div class="d-grid gap-2 col-2 mx-auto result_button">
-        <button class="btn btn-primary" type="submit">診断する</button>
+        <div class="d-grid gap-2 col-2 mx-auto result_button">
+            <button class="btn btn-primary" type="submit">診断する</button>
+        </div>
     </div>
 </form>
 
