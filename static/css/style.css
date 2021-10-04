@@ -78,6 +78,10 @@ table {
     font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
 }
 
+tr {
+    border-bottom: thin solid lightgray !important;
+}
+
 .table_head {
     height: 3em;
 }
